@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>tony&#39;s</title>
+  <title>TonyLin&#39;blog</title>
   
-  <subtitle>welcome</subtitle>
+  <subtitle>learn ,then record</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tonglinchina.com/"/>
