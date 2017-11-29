@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tonglinchina.com/"/>
-  <updated>2017-11-27T14:22:43.000Z</updated>
+  <updated>2017-11-29T15:28:57.000Z</updated>
   <id>http://tonglinchina.com/</id>
   
   <author>
@@ -17,49 +17,26 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>”尝试下，也不知道行不行“</title>
-    <link href="http://tonglinchina.com/2017/11/27/My-New-Post/"/>
-    <id>http://tonglinchina.com/2017/11/27/My-New-Post/</id>
-    <published>2017-11-27T14:20:45.000Z</published>
-    <updated>2017-11-27T14:22:43.000Z</updated>
+    <title>风萧</title>
+    <link href="http://tonglinchina.com/2017/11/29/diary-2017-1129/"/>
+    <id>http://tonglinchina.com/2017/11/29/diary-2017-1129/</id>
+    <published>2017-11-29T14:39:27.000Z</published>
+    <updated>2017-11-29T15:28:57.000Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>帮忙把这只狐狸塞到圣诞袜子里或者带上圣诞帽~~~~ ——鱼头  </p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;帮忙把这只狐狸塞到圣诞袜子里或者带上圣诞帽~~~~ ——鱼头  &lt;/p&gt;
-&lt;/blockquote&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="杂谈" scheme="http://tonglinchina.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://tonglinchina.com/2017/11/02/hello-world/"/>
-    <id>http://tonglinchina.com/2017/11/02/hello-world/</id>
-    <published>2017-11-01T16:04:55.000Z</published>
-    <updated>2017-11-01T16:04:55.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>最近闲来，得此博客，第一篇博客。<br>深夜的风，萧萧。<br>冬姑娘来了。</p><p>近来总有个远虑：客户端的前景。<br>隐约中客户端变的不那么重要，<br>微信的流量吸引，都希望在微信里面玩<br>出现了小程序，内嵌h5。<br>开发的周期及速度<br>出现了各种跨平台框架：weex,react native<br>插件式的框架cordova…<br>这些让原本做ios或安卓的都不能仅关注原生开发<br>然而ios本身也在不断更新，<br>如：今年的开发者大会：ARKit,coreML及swift 4.0</p><p>突然发现学习的东西太多太多<br>如何发展ios的专业知识的深度的同时又提升自己的广度呢<br>往往导致了深度没够，广度欠的境遇。</p><p>在工作3后不能在局限会用控件及好的三方框架<br>学习其中的原理及吸取实现的方式，规范及自己很少用的技术<br>这在其深</p><p>学习自己陌生但又相关的领域知识<br>新语言的学习，时刻关注开发者大会的更新，熟悉跨平台技术原理<br>这在其广</p><p>脱去懒惰，穿上勤奋<br>迎接萧萧的冬姑娘</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+        &lt;p&gt;最近闲来，得此博客，第一篇博客。&lt;br&gt;深夜的风，萧萧。&lt;br&gt;冬姑娘来了。&lt;/p&gt;
+&lt;p&gt;近来总有个远虑：客户端的前景。&lt;br&gt;隐约中客户端变的不那么重要，&lt;br&gt;微信的流量吸引，都希望在微信里面玩&lt;br&gt;出现了小程序，内嵌h5。&lt;br&gt;开发的周期及速度&lt;br&gt;出现了各种
       
     
     </summary>
     
+    
+      <category term="-杂谈" scheme="http://tonglinchina.com/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
