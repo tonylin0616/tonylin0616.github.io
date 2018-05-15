@@ -6,18 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://tonglinchina.com">
-  <title>TonyLin&#39;blog</title>
+  <title>IOS消息推送 | TonyLin&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="毕业于扬州大学，现职于苏宁，主要做乐拼购ios的开发。喜欢学习不同的可能。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TonyLin&#39;blog">
-<meta property="og:url" content="http://tonglinchina.com/index.html">
+  <meta name="description" content="消息推送当App获取到新的数据时，即使你的App没有在前台运行，本地通知和远程通知都是通知用户的方式。例如：当获取新的消息时，即时通讯App让用户知道。一个日历的app通知用户即将到的约会。本地通知和远程通知的区别是显而易见的： * 在本地通知中，App本地配置通知的具体信息并且把配置的通知发送给系统。当App不在前台时，处理交付的通知。 * 在远程通知中，你使用你们公司的服务器通过APNS发送数">
+<meta name="keywords" content="-IOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IOS消息推送">
+<meta property="og:url" content="http://tonglinchina.com/2018/05/15/消息推送-2018-0514/index.html">
 <meta property="og:site_name" content="TonyLin&#39;blog">
-<meta property="og:description" content="毕业于扬州大学，现职于苏宁，主要做乐拼购ios的开发。喜欢学习不同的可能。">
+<meta property="og:description" content="消息推送当App获取到新的数据时，即使你的App没有在前台运行，本地通知和远程通知都是通知用户的方式。例如：当获取新的消息时，即时通讯App让用户知道。一个日历的app通知用户即将到的约会。本地通知和远程通知的区别是显而易见的： * 在本地通知中，App本地配置通知的具体信息并且把配置的通知发送给系统。当App不在前台时，处理交付的通知。 * 在远程通知中，你使用你们公司的服务器通过APNS发送数">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://tonglinchina.com/2018/05/15/消息推送-2018-0514/badged_app.png">
+<meta property="og:image" content="http://tonglinchina.com/2018/05/15/消息推送-2018-0514/remote_notif_simple.png">
+<meta property="og:image" content="http://tonglinchina.com/2018/05/15/消息推送-2018-0514/消息推送应用内.png">
+<meta property="og:updated_time" content="2018-05-15T02:42:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TonyLin&#39;blog">
-<meta name="twitter:description" content="毕业于扬州大学，现职于苏宁，主要做乐拼购ios的开发。喜欢学习不同的可能。">
+<meta name="twitter:title" content="IOS消息推送">
+<meta name="twitter:description" content="消息推送当App获取到新的数据时，即使你的App没有在前台运行，本地通知和远程通知都是通知用户的方式。例如：当获取新的消息时，即时通讯App让用户知道。一个日历的app通知用户即将到的约会。本地通知和远程通知的区别是显而易见的： * 在本地通知中，App本地配置通知的具体信息并且把配置的通知发送给系统。当App不在前台时，处理交付的通知。 * 在远程通知中，你使用你们公司的服务器通过APNS发送数">
+<meta name="twitter:image" content="http://tonglinchina.com/2018/05/15/消息推送-2018-0514/badged_app.png">
   
     <link rel="alternative" href="/atom.xml" title="TonyLin&#39;blog" type="application/atom+xml">
   
@@ -145,16 +151,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-消息推送-2018-0514" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-消息推送-2018-0514" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/15/消息推送-2018-0514/">IOS消息推送</a>
+    <h1 class="article-title" itemprop="name">
+      IOS消息推送
     </h1>
   
 
@@ -170,10 +174,15 @@
         <h1 id="消息推送"><a href="#消息推送" class="headerlink" title="消息推送"></a>消息推送</h1><p>当App获取到新的数据时，即使你的App没有在前台运行，本地通知和远程通知都是通知用户的方式。例如：当获取新的消息时，即时通讯App让用户知道。一个日历的app通知用户即将到的约会。本地通知和远程通知的区别是显而易见的：</p>
 <pre><code>* 在本地通知中，App本地配置通知的具体信息并且把配置的通知发送给系统。当App不在前台时，处理交付的通知。
 * 在远程通知中，你使用你们公司的服务器通过APNS发送数据到用户设备。
-</code></pre><p>本地通知和远程通知都需要在app里面添加代码来支持调度和处理通知。比如远程通知，你必须提供一个服务环境来支撑从用户设备获取数据和发送通知数据通过APNS。<br></p>
-        
-          <a class="article-more-a" href="/2018/05/15/消息推送-2018-0514/#more">more >></a>
-        
+</code></pre><p>本地通知和远程通知都需要在app里面添加代码来支持调度和处理通知。比如远程通知，你必须提供一个服务环境来支撑从用户设备获取数据和发送通知数据通过APNS。<br><a id="more"></a></p>
+<h1 id="用户通知框架和用户通知UI框架"><a href="#用户通知框架和用户通知UI框架" class="headerlink" title="用户通知框架和用户通知UI框架"></a>用户通知框架和用户通知UI框架</h1><p>对用户来说本地通知和远程通知都是相同的：</p>
+<pre><code>1. 一个屏幕的告警或横幅
+2. 一个app图标上的徽章
+3. 一个声音伴随告警，横幅，徽章
+</code></pre><p><img src="/2018/05/15/消息推送-2018-0514/badged_app.png" alt="badged_app"><br>图1-1:app图标上的徽章</p>
+<h1 id="APNs介绍"><a href="#APNs介绍" class="headerlink" title="APNs介绍"></a>APNs介绍</h1><p><img src="/2018/05/15/消息推送-2018-0514/remote_notif_simple.png" alt="remote_notif_simple"><br> 可以分为三个阶段：<br>第一阶段： APNS Pusher 应用程序把要发送的消息，目的iphone的标示打包，发给APNS<br>第二阶段：APNS 在自身的已注册 Push 服务列表中，查找有相应标识的 iphone, 并把消息发到 iphone<br>第三阶段： iphone 把发来的消息传递给相应的应用程序，并且按照设定弹出 Push 通知<br><img src="/2018/05/15/消息推送-2018-0514/消息推送应用内.png" alt="消息推送应用内"><br>  1: 首先是应用程序注册消息推送<br>  2: iOS 跟 APNS Service 要 deviceToken<br>  3: 应用程序将 deviceToken 发送给PUSH服务端程序<br>  4: 服务端程序向APNS服务器发送消息<br>  5: APNS 服务将消息发送给iphone应用程序</p>
+<h1 id="通知代码"><a href="#通知代码" class="headerlink" title="通知代码"></a>通知代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">#pragma mark - 本地通知&amp;远程通知</div><div class="line">#pragma mark -注册</div><div class="line">#ifdef __IPHONE_8_0</div><div class="line">- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings</div><div class="line">&#123;</div><div class="line">    [application registerForRemoteNotifications];</div><div class="line">&#125;</div><div class="line">#endif</div><div class="line"></div><div class="line">- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken</div><div class="line">&#123;</div><div class="line">    </div><div class="line">&#125;</div><div class="line">- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error</div><div class="line">&#123;</div><div class="line">&#125;</div><div class="line">#pragma mark -接收通知</div><div class="line">//IOS 10之前</div><div class="line">- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification</div><div class="line">&#123;</div><div class="line">    </div><div class="line">&#125;</div><div class="line">//IOS 10之前</div><div class="line">- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo</div><div class="line">&#123;</div><div class="line">    </div><div class="line">&#125;</div><div class="line">//IOS 10之前 替换 didReceiveRemoteNotification 这个方法</div><div class="line">- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler</div><div class="line">&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">//iOS10，只有当应用程序在前台时，该方法将被调用。</div><div class="line">- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler</div><div class="line">&#123;</div><div class="line">&#125;</div><div class="line">//IOS10 推送被点击</div><div class="line">- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler</div><div class="line">&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
       
 
       
@@ -195,16 +204,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/15/消息推送-2018-0514/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://tonglinchina.com/2018/05/15/消息推送-2018-0514/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/14/2017年度总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -224,145 +292,14 @@
 
 
 
-
   
-    <article id="post-2017年度总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#总结<br> 2018都开始几天了，总觉得应该总结下过去的2017，回头发现这一年一年过的貌似都差不多，但又不尽相同。工作了有4年了，没有做过年度总结，现在想想之前都过的比较浑噩，不知道自己的成长，感觉就是这么时间没有。所以我要写的什么让我有点激情，有点目标。什么时候看到的时候可以提醒自己。</p>
-<p>##工作<br>2017年进入了苏宁，进入了一个新的环境，刚来苏宁那会才知道苏宁有这么大，在我的印象中和途牛差不多。也是这个原因我来到了苏宁，现在想想其实在不在大公司无所谓，符合自身发展及成长才是最重要的。我算是幸运的，一直待在乐拼购项目组，对于ios这边的代码滚瓜烂熟，一年下来对于代码的感情比对公司的感情还大，每个功能都有我的痕迹。<br>题外话说了一些。其实吧，4年没写总结还有个原因就是不知道在工作方面写些什么，总感觉进步了，但又没进步。有很多要写，但又不知道从何说起。现在想想其实还是平时没做记录的习惯。今年一个做了一个重要的事就是自己搭建自己的博客</p>
-<p>###博客<br>博客是个好东西，可以用来做笔记，又能分享知识与交流（写的很不错），最重要就是能记录当时对于一件事，一个知识的心得。我觉得应该养成习惯记录下自己学习的东西与想法。这也是一个知识的总结。我觉得这个非常好。而且现在越来越多的人重视知识付费，当然我离这个还有十万八千里。但是起码我从现在做起，认真对待每个我接触的知识点。现在刚搭建起来希望可以用起来。</p>
-<p>####看书与公开课<br>这两个做的太少了，怎么回事。看了点重构又看了点ios内存管理但又都没看全。仔细想想真没了。公开课也是的学了点机器学习又看了点线性代数，也没看全。很喜欢半途而废。</p>
-<p>##生活<br>在南京有了自己的小窝，自己的小孩也带来了南京，现在也一周岁了，每次下班回到家总是会心情很好。总感觉自己还没过度好做一个爸爸，一天天的看着孩子长大，貌似每天也没什么时间陪他，只想着他开心健康。</p>
-<p>##展望<br>其实2017想了很多，希望2018能一个一个去实现。</p>
-<p>#####完完整整的看书和公开课</p>
-<p>#####记录每个学习的东西在博客</p>
-<p>#####换一个不错的工作</p>
-<p>#####善待他人</p>
-<p>#####出去旅游一次</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/14/2017年度总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-diary-2017-1129" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/29/diary-2017-1129/">风萧</a>
-    </h1>
   
 
-        
-        <a href="/2017/11/29/diary-2017-1129/" class="archive-article-date">
-  	<time datetime="2017-11-29T14:39:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近闲来，得此博客，第一篇博客。<br>深夜的风，萧萧。<br>冬姑娘来了。</p>
-<p>近来总有个远虑：客户端的前景。<br>隐约中客户端变的不那么重要，<br>微信的流量吸引，都希望在微信里面玩<br>出现了小程序，内嵌h5。<br>开发的周期及速度<br>出现了各种跨平台框架：weex,react native<br>插件式的框架cordova…<br>这些让原本做ios或安卓的都不能仅关注原生开发<br>然而ios本身也在不断更新，<br>如：今年的开发者大会：ARKit,coreML及swift 4.0</p>
-<p>突然发现学习的东西太多太多<br>如何发展ios的专业知识的深度的同时又提升自己的广度呢<br>往往导致了深度没够，广度欠的境遇。</p>
-<p>在工作3后不能在局限会用控件及好的三方框架<br>学习其中的原理及吸取实现的方式，规范及自己很少用的技术<br>这在其深</p>
-<p>学习自己陌生但又相关的领域知识<br>新语言的学习，时刻关注开发者大会的更新，熟悉跨平台技术原理<br>这在其广</p>
-<p>脱去懒惰，穿上勤奋<br>迎接萧萧的冬姑娘</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-杂谈</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/29/diary-2017-1129/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -385,8 +322,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
