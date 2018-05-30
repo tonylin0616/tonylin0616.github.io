@@ -9,7 +9,7 @@
   <title>Cordova新建一个纯WebApp | TonyLin&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前言目前刚进入的公司用的纯web技术做跨平台的开发，让我一个IOS开发很不知所措。不过用的跨平台技术(Cordova)之前接触过还比较熟悉。最近结合之前的记忆，又在网上了解了下，进一步了解了这个技术。当时主要是在原生的工程里面集成Cordova的源码并自己维护插件及配置文件，与这次还是很不一样的。所以这次想集合两种不同的集成方式进行说明。      使用Cordova的人群如下： * 移动应用开发">
-<meta name="keywords" content="-杂谈">
+<meta name="keywords" content="-ios">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cordova新建一个纯WebApp">
 <meta property="og:url" content="http://tonglinchina.com/2018/05/30/Cordor&&WebApp-2018-5-30/index.html">
@@ -17,7 +17,7 @@
 <meta property="og:description" content="前言目前刚进入的公司用的纯web技术做跨平台的开发，让我一个IOS开发很不知所措。不过用的跨平台技术(Cordova)之前接触过还比较熟悉。最近结合之前的记忆，又在网上了解了下，进一步了解了这个技术。当时主要是在原生的工程里面集成Cordova的源码并自己维护插件及配置文件，与这次还是很不一样的。所以这次想集合两种不同的集成方式进行说明。      使用Cordova的人群如下： * 移动应用开发">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://tonglinchina.com/2018/05/30/Cordor&&WebApp-2018-5-30/%E6%8F%92%E4%BB%B6%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95.png">
-<meta property="og:updated_time" content="2018-05-30T09:04:27.141Z">
+<meta property="og:updated_time" content="2018-05-30T09:12:11.387Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cordova新建一个纯WebApp">
 <meta name="twitter:description" content="前言目前刚进入的公司用的纯web技术做跨平台的开发，让我一个IOS开发很不知所措。不过用的跨平台技术(Cordova)之前接触过还比较熟悉。最近结合之前的记忆，又在网上了解了下，进一步了解了这个技术。当时主要是在原生的工程里面集成Cordova的源码并自己维护插件及配置文件，与这次还是很不一样的。所以这次想集合两种不同的集成方式进行说明。      使用Cordova的人群如下： * 移动应用开发">
@@ -174,16 +174,13 @@
 * web开发者，想包装部署自己的web App将其分发到各个应用商店门户
 * 移动应用开发者，有兴趣混合原生应用组建和一个WebView可以接触设备API，或者你想开发一个原生和WebView组件之间的插件接口
 </code></pre><a id="more"></a>                
-<h1 id="WebApp"><a href="#WebApp" class="headerlink" title="WebApp"></a>WebApp</h1><h2 id="安装Cordova-CLI-Commond-Lines-Interface"><a href="#安装Cordova-CLI-Commond-Lines-Interface" class="headerlink" title="安装Cordova CLI(Commond Lines Interface)"></a>安装Cordova CLI(Commond Lines Interface)</h2><p>   Cordova命令行工具作为npm包分发</p>
-<pre><code>1.  安装Homebrew
-`/usr/bin/ruby -e &quot;$(curl -fsSL https:// raw.githubusercontent.com/Homebrew/install/master/install)&quot;`
-2. 安装node.js,安装完成后可以在命令行中使用node和npm，node.js是项目开发时的所需的代码库，是一种javascript的运行环境，能够是的javascript脱离浏览器运行，在安装node.js的时候，npm也会跟着一起安装，它是包管理工具，npm管理node.js中的第三方插件
-`brew install node`
-查看是否安装成功
-`node -v`
-            3. 安装cordova模块使用node.js的npm工具。
-`sudo npm install -g cordova`
-</code></pre><h2 id="新建一个项目"><a href="#新建一个项目" class="headerlink" title="新建一个项目"></a>新建一个项目</h2><ol>
+<h1 id="WebApp"><a href="#WebApp" class="headerlink" title="WebApp"></a>WebApp</h1><h2 id="安装Cordova-CLI-Commond-Lines-Interface"><a href="#安装Cordova-CLI-Commond-Lines-Interface" class="headerlink" title="安装Cordova CLI(Commond Lines Interface)"></a>安装Cordova CLI(Commond Lines Interface)</h2><p>Cordova命令行工具作为npm包分发</p>
+<ol>
+<li>安装Homebrew<br><code>/usr/bin/ruby -e &quot;$(curl -fsSL https:// raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></li>
+<li>安装node.js,安装完成后可以在命令行中使用node和npm，node.js是项目开发时的所需的代码库，是一种<br>javascript的运行环境，能够是的javascript脱离浏览器运行，在安装node.js的时候，npm也会跟着一起安装，它是包管理工具，npm管理node.js中的第三方插件<br><code>brew install node</code><br>查看是否安装成功<br><code>node -v</code></li>
+<li>安装cordova模块使用node.js的npm工具。<br><code>sudo npm install -g cordova</code></li>
+</ol>
+<h2 id="新建一个项目"><a href="#新建一个项目" class="headerlink" title="新建一个项目"></a>新建一个项目</h2><ol>
 <li>创建一个项目<br><code>cordova create MyApp</code></li>
 <li>添加一个平台<br><code>cd MyApp</code><br><code>cordova platform add ios</code></li>
 <li>运行App<br><code>cordova run iOS</code></li>
@@ -216,7 +213,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-杂谈</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">-ios</a>
         		</li>
       		
 		</ul>
@@ -415,6 +412,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">-IOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">-ios</a>
               </li>
             
             <div class="clearfix"></div>
