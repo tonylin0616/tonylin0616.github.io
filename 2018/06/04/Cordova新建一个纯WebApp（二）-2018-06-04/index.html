@@ -6,18 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://tonglinchina.com">
-  <title>Tag: -ios | TonyLin&#39;blog</title>
+  <title>Cordova新建一个纯WebApp(二) | TonyLin&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="毕业于扬州大学，现职于苏宁，主要做乐拼购ios的开发。喜欢学习不同的可能。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TonyLin&#39;blog">
-<meta property="og:url" content="http://tonglinchina.com/tags/ios/index.html">
+  <meta name="description" content="前言在上一篇文章主要介绍项目的创建及插件的新建与添加，只是新建了一个工程的架子。这篇文章主要是讲解如何设置plugin.xml，讲解工程文件中插件相关文件。下面主要是用一个蓝牙插件进行说明，通过配置plugin.xml，然后添加进ios工程中，然后再添加js与原生交互的具体方法。">
+<meta name="keywords" content="-IOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cordova新建一个纯WebApp(二)">
+<meta property="og:url" content="http://tonglinchina.com/2018/06/04/Cordova新建一个纯WebApp（二）-2018-06-04/index.html">
 <meta property="og:site_name" content="TonyLin&#39;blog">
-<meta property="og:description" content="毕业于扬州大学，现职于苏宁，主要做乐拼购ios的开发。喜欢学习不同的可能。">
+<meta property="og:description" content="前言在上一篇文章主要介绍项目的创建及插件的新建与添加，只是新建了一个工程的架子。这篇文章主要是讲解如何设置plugin.xml，讲解工程文件中插件相关文件。下面主要是用一个蓝牙插件进行说明，通过配置plugin.xml，然后添加进ios工程中，然后再添加js与原生交互的具体方法。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://tonglinchina.com/2018/06/04/Cordova新建一个纯WebApp（二）-2018-06-04/pluginXML文件.png">
+<meta property="og:image" content="http://tonglinchina.com/2018/06/04/Cordova新建一个纯WebApp（二）-2018-06-04/plugins文件夹.png">
+<meta property="og:image" content="http://tonglinchina.com/2018/06/04/Cordova新建一个纯WebApp（二）-2018-06-04/cordova_plugins_js文件.png">
+<meta property="og:updated_time" content="2018-06-04T02:35:07.754Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TonyLin&#39;blog">
-<meta name="twitter:description" content="毕业于扬州大学，现职于苏宁，主要做乐拼购ios的开发。喜欢学习不同的可能。">
+<meta name="twitter:title" content="Cordova新建一个纯WebApp(二)">
+<meta name="twitter:description" content="前言在上一篇文章主要介绍项目的创建及插件的新建与添加，只是新建了一个工程的架子。这篇文章主要是讲解如何设置plugin.xml，讲解工程文件中插件相关文件。下面主要是用一个蓝牙插件进行说明，通过配置plugin.xml，然后添加进ios工程中，然后再添加js与原生交互的具体方法。">
+<meta name="twitter:image" content="http://tonglinchina.com/2018/06/04/Cordova新建一个纯WebApp（二）-2018-06-04/pluginXML文件.png">
   
     <link rel="alternative" href="/atom.xml" title="TonyLin&#39;blog" type="application/atom+xml">
   
@@ -145,60 +151,175 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Cordova新建一个纯WebApp（二）-2018-06-04" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/30/Cordor&&WebApp-2018-5-30/" class="archive-article-date">
-  	<time datetime="2018-05-30T09:03:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/30/Cordor&&WebApp-2018-5-30/">Cordova新建一个纯WebApp</a>
+    <h1 class="article-title" itemprop="name">
+      Cordova新建一个纯WebApp(二)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/06/04/Cordova新建一个纯WebApp（二）-2018-06-04/" class="archive-article-date">
+  	<time datetime="2018-06-04T01:49:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在上一篇文章主要介绍项目的创建及插件的新建与添加，只是新建了一个工程的架子。这篇文章主要是讲解如何设置plugin.xml，讲解工程文件中插件相关文件。下面主要是用一个蓝牙插件进行说明，通过配置plugin.xml，然后添加进ios工程中，然后再添加js与原生交互的具体方法。<br><a id="more"></a></p>
+<h1 id="添加package-json文件"><a href="#添加package-json文件" class="headerlink" title="添加package.json文件"></a>添加package.json文件</h1><p>添加packagp.json文件是解决上篇遗留的一个问题。上篇在创建一个插件后安装插件是会报错的，是因为缺少了package.json文件。    </p>
+<ol>
+<li>添加package.json<br><code>plugman createpackagejson .</code></li>
+</ol>
+<h2 id="新建的插件中的文件-及文件说明"><a href="#新建的插件中的文件-及文件说明" class="headerlink" title="新建的插件中的文件 及文件说明"></a>新建的插件中的文件 及文件说明</h2><ol>
+<li>plugin.xml<br>plugin.xml是插件的配置文件，包括原生的类，资源文件及引用的文件，js请求原生的接受类。配置的详情如下图：<br><img src="/2018/06/04/Cordova新建一个纯WebApp（二）-2018-06-04/pluginXML文件.png" alt="pluginXML文件"><br>图中刚开始的说明就不讲解了，从<js-module></js-module>开始，如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;js-module src=&quot;www/BluetoothDevicePlugin.js&quot; name=&quot;BluetoothDevicePlugin&quot;&gt;</div><div class="line">        &lt;clobbers target=&quot;BluetoothDevicePlugin&quot;/&gt;</div><div class="line">&lt;/js-module&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>以上配置的是ios交互的js文件BluetoothDevicePlugin.js，该文件的使用在下面会详细说，clobbers属性是前端js中引用的名字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;config-file target=&quot;config.xml&quot; parent=&quot;/*&quot;&gt;</div><div class="line">     &lt;feature name=&quot;BluetoothDevicePlugin&quot;&gt;</div><div class="line">         &lt;param name=&quot;ios-package&quot; value=&quot;BluetoothDevicePlugin&quot; /&gt;</div><div class="line">     &lt;/feature&gt;</div><div class="line">&lt;/config-file&gt;</div></pre></td></tr></table></figure></p>
+<p>在config.xml文件中配置添加feature和param，config.xml在下面会详细说。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;!-- self plugin sources --&gt;</div><div class="line">     &lt;header-file src=&quot;src/ios/BluetoothDevicePlugin.h&quot; /&gt;</div><div class="line">     &lt;source-file src=&quot;src/ios/BluetoothDevicePlugin.mm&quot; /&gt;</div><div class="line">&lt;!-- hhd sdk--&gt;</div><div class="line">     &lt;framework src=&quot;src/ios/SYDIDCardReader.framework&quot; custom=&quot;true&quot;/&gt;</div><div class="line">     &lt;!-- encrypt sdk by sensor--&gt;</div><div class="line">     &lt;header-file src=&quot;src/ios/encrypt.sdk/EncrylibInterface.h&quot; /&gt;</div><div class="line">     &lt;source-file src=&quot;src/ios/encrypt.sdk/libJsUnicomEncry.a&quot; framework=&quot;true&quot;/&gt;</div></pre></td></tr></table></figure></p>
+<p>以上配置是把src中的这些文件添加到ios 平台中各个文件夹中，包括类，三方框架。</p>
+<h2 id="ios平台中文件的更新及说明"><a href="#ios平台中文件的更新及说明" class="headerlink" title="ios平台中文件的更新及说明"></a>ios平台中文件的更新及说明</h2><p>插件中的plugin.xml文件配置完成后，进行安装插件，ios平台中会更新一些文件，下面对ios平台更新的文件进行说明</p>
+<ol>
+<li><p>plugins<br>plugins是一个文件夹，存放插件的js与原生交互的js文件，如下图：<br><img src="/2018/06/04/Cordova新建一个纯WebApp（二）-2018-06-04/plugins文件夹.png" alt="plugins文件夹"><br>通过上图可以看出有三个js的文件，com.ai.ced.bluetooth这个文件夹名称是在新建package.json时设置的，目录下的www文件夹是新建插件时里面的www文件夹，可以看上篇的新建插件后文件目录。里面的bluetoothDevicePlugin.js是ios原生与js交互的文件，里面提供了原生的类名，方法及参数。如下图</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var exec = require(&apos;cordova/exec&apos;);</div><div class="line"></div><div class="line">//初始化读卡器，iOS接受js发送的请求</div><div class="line">exports.initBluetoothPlugins = function(param, success, error) &#123;</div><div class="line">  exec(success, error, &quot;BluetoothDevicePlugin&quot;, &quot;initBluetoothPlugins&quot;, [param]);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>原生类 BluetoothDevicePlugin.h</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">//</div><div class="line">//  BluetoothDevicePlugin.h</div><div class="line">//  BlueToothCordova</div><div class="line">//</div><div class="line">//  Created by TONY on 2018/5/16.</div><div class="line">//  Copyright © 2018年 TONY. All rights reserved.</div><div class="line">//</div><div class="line"></div><div class="line">#import &quot;CDVPlugin.h&quot;</div><div class="line"></div><div class="line">@interface BluetoothDevicePlugin : CDVPlugin</div><div class="line">/**</div><div class="line"> 初始化读卡器</div><div class="line"> 请求参数：&#123;&#125;</div><div class="line"> @param command command description</div><div class="line"> */</div><div class="line">- (void)initBluetoothPlugins: (CDVInvokedUrlCommand *)command;</div><div class="line">    </div><div class="line">@end</div></pre></td></tr></table></figure>
+</li>
+<li><p>config.xml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;feature name=&quot;BluetoothDevicePlugin&quot;&gt;</div><div class="line">        &lt;param name=&quot;ios-package&quot; value=&quot;BluetoothDevicePlugin&quot; /&gt;</div><div class="line">    &lt;/feature&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>feature中name是bluetoothDevicePlugin.js中exec(success, error, “BluetoothDevicePlugin”, “initBluetoothPlugins”, [param])方法的BluetoothDevicePlugin，param中name是工程中BluetoothDevicePlugin.h的类名。</p>
+<ol>
+<li>cordova_pludins.js<br>cordova_pludins.js是一个插件映射列表，每个插件映射维护一个ios接受js请求的file和前端页面js请求发方法的clobbers。 如下图：<br><img src="/2018/06/04/Cordova新建一个纯WebApp（二）-2018-06-04/cordova_plugins_js文件.png" alt="cordova_plugins_js文件"><br>通过上图这个映射可以找到上面的bluetoothDevicePlugin.js文件 以及前端调用bluetoothDevicePlugin.js的方法<h2 id="前端页面调用"><a href="#前端页面调用" class="headerlink" title="前端页面调用"></a>前端页面调用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;/common_mobile/component/cordova/cordova.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">     function button_onclick()&#123;</div><div class="line">      //蓝牙初始化</div><div class="line">      BlutoothDevicePlugin.initBluetoothPlugins();</div><div class="line">    &#125;</div><div class="line">   &lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>使用cordova_pludins.js中clobbers的方式，及bluetoothDevicePlugin.js中initBluetoothPlugins方法可以与ios进行交互。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">-ios</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">-IOS</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://tonglinchina.com/2018/06/04/Cordova新建一个纯WebApp（二）-2018-06-04/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/05/30/Cordor&&WebApp-2018-5-30/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Cordova新建一个纯WebApp</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -221,9 +342,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
@@ -390,38 +511,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
                 <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
 
                 <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-  </div>
-</body>
-</html>-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
                 <!-- element will get class pswp__preloader--active when preloader is running -->
                 <div class="pswp__preloader">
                     <div class="pswp__preloader__icn">
