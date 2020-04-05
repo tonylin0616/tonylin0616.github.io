@@ -5,13 +5,13 @@
     
   <url>
     <loc>http://blog.csdn.net</loc>
-    <lastmod>2018-06-04T02:35:07.754Z</lastmod>
+    <lastmod>2020-04-05T17:03:03.463Z</lastmod>
     <data>
         <display>
-        <title>Cordova新建一个纯WebApp(二)</title>
-        <pubTime>2018-06-04T01:49:27.000Z</pubTime>
+        <title>机器学习环境搭建</title>
+        <pubTime>2020-04-05T16:31:50.000Z</pubTime>
         
-        <tag>-IOS</tag>
+        <tag>-机器学习</tag>
          
          
            
@@ -22,13 +22,30 @@
     
   <url>
     <loc>http://blog.csdn.net</loc>
-    <lastmod>2018-06-04T01:54:46.940Z</lastmod>
+    <lastmod>2020-04-05T16:31:07.525Z</lastmod>
     <data>
         <display>
         <title>2017总结</title>
         <pubTime>2018-01-14T14:20:50.000Z</pubTime>
         
         <tag>-杂谈</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.csdn.net</loc>
+    <lastmod>2018-06-04T03:04:00.484Z</lastmod>
+    <data>
+        <display>
+        <title>Cordova新建一个纯WebApp(二)</title>
+        <pubTime>2018-06-04T01:49:27.000Z</pubTime>
+        
+        <tag>-IOS</tag>
          
          
            

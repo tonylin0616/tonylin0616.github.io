@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://tonglinchina.com/2018/06/04/Cordova新建一个纯WebApp（二）-2018-06-04/pluginXML文件.png">
 <meta property="og:image" content="http://tonglinchina.com/2018/06/04/Cordova新建一个纯WebApp（二）-2018-06-04/plugins文件夹.png">
 <meta property="og:image" content="http://tonglinchina.com/2018/06/04/Cordova新建一个纯WebApp（二）-2018-06-04/cordova_plugins_js文件.png">
-<meta property="og:updated_time" content="2018-06-04T02:35:07.754Z">
+<meta property="og:updated_time" content="2018-06-04T03:04:00.484Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cordova新建一个纯WebApp(二)">
 <meta name="twitter:description" content="前言在上一篇文章主要介绍项目的创建及插件的新建与添加，只是新建了一个工程的架子。这篇文章主要是讲解如何设置plugin.xml，讲解工程文件中插件相关文件。下面主要是用一个蓝牙插件进行说明，通过配置plugin.xml，然后添加进ios工程中，然后再添加js与原生交互的具体方法。">
@@ -183,7 +183,7 @@
 <p>以上配置的是ios交互的js文件BluetoothDevicePlugin.js，该文件的使用在下面会详细说，clobbers属性是前端js中引用的名字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;config-file target=&quot;config.xml&quot; parent=&quot;/*&quot;&gt;</div><div class="line">     &lt;feature name=&quot;BluetoothDevicePlugin&quot;&gt;</div><div class="line">         &lt;param name=&quot;ios-package&quot; value=&quot;BluetoothDevicePlugin&quot; /&gt;</div><div class="line">     &lt;/feature&gt;</div><div class="line">&lt;/config-file&gt;</div></pre></td></tr></table></figure></p>
 <p>在config.xml文件中配置添加feature和param，config.xml在下面会详细说。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;!-- self plugin sources --&gt;</div><div class="line">     &lt;header-file src=&quot;src/ios/BluetoothDevicePlugin.h&quot; /&gt;</div><div class="line">     &lt;source-file src=&quot;src/ios/BluetoothDevicePlugin.mm&quot; /&gt;</div><div class="line">&lt;!-- hhd sdk--&gt;</div><div class="line">     &lt;framework src=&quot;src/ios/SYDIDCardReader.framework&quot; custom=&quot;true&quot;/&gt;</div><div class="line">     &lt;!-- encrypt sdk by sensor--&gt;</div><div class="line">     &lt;header-file src=&quot;src/ios/encrypt.sdk/EncrylibInterface.h&quot; /&gt;</div><div class="line">     &lt;source-file src=&quot;src/ios/encrypt.sdk/libJsUnicomEncry.a&quot; framework=&quot;true&quot;/&gt;</div></pre></td></tr></table></figure></p>
 <p>以上配置是把src中的这些文件添加到ios 平台中各个文件夹中，包括类，三方框架。</p>
-<h2 id="ios平台中文件的更新及说明"><a href="#ios平台中文件的更新及说明" class="headerlink" title="ios平台中文件的更新及说明"></a>ios平台中文件的更新及说明</h2><p>插件中的plugin.xml文件配置完成后，进行安装插件，ios平台中会更新一些文件，下面对ios平台更新的文件进行说明</p>
+<h2 id="ios平台中文件的更新及说明"><a href="#ios平台中文件的更新及说明" class="headerlink" title="ios平台中文件的更新及说明"></a>ios平台中文件的更新及说明</h2><p>插件中的plugin.xml文件配置完成后，进行安装插件，ios平台中会更新一些文件，下面对ios平台更新的文件进行说明。</p>
 <ol>
 <li><p>plugins<br>plugins是一个文件夹，存放插件的js与原生交互的js文件，如下图：<br><img src="/2018/06/04/Cordova新建一个纯WebApp（二）-2018-06-04/plugins文件夹.png" alt="plugins文件夹"><br>通过上图可以看出有三个js的文件，com.ai.ced.bluetooth这个文件夹名称是在新建package.json时设置的，目录下的www文件夹是新建插件时里面的www文件夹，可以看上篇的新建插件后文件目录。里面的bluetoothDevicePlugin.js是ios原生与js交互的文件，里面提供了原生的类名，方法及参数。如下图</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var exec = require(&apos;cordova/exec&apos;);</div><div class="line"></div><div class="line">//初始化读卡器，iOS接受js发送的请求</div><div class="line">exports.initBluetoothPlugins = function(param, success, error) &#123;</div><div class="line">  exec(success, error, &quot;BluetoothDevicePlugin&quot;, &quot;initBluetoothPlugins&quot;, [param]);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
@@ -193,11 +193,10 @@
 </li>
 <li><p>config.xml</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;feature name=&quot;BluetoothDevicePlugin&quot;&gt;</div><div class="line">        &lt;param name=&quot;ios-package&quot; value=&quot;BluetoothDevicePlugin&quot; /&gt;</div><div class="line">    &lt;/feature&gt;</div></pre></td></tr></table></figure>
-</li>
-</ol>
 <p>feature中name是bluetoothDevicePlugin.js中exec(success, error, “BluetoothDevicePlugin”, “initBluetoothPlugins”, [param])方法的BluetoothDevicePlugin，param中name是工程中BluetoothDevicePlugin.h的类名。</p>
-<ol>
-<li>cordova_pludins.js<br>cordova_pludins.js是一个插件映射列表，每个插件映射维护一个ios接受js请求的file和前端页面js请求发方法的clobbers。 如下图：<br><img src="/2018/06/04/Cordova新建一个纯WebApp（二）-2018-06-04/cordova_plugins_js文件.png" alt="cordova_plugins_js文件"><br>通过上图这个映射可以找到上面的bluetoothDevicePlugin.js文件 以及前端调用bluetoothDevicePlugin.js的方法<h2 id="前端页面调用"><a href="#前端页面调用" class="headerlink" title="前端页面调用"></a>前端页面调用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;/common_mobile/component/cordova/cordova.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">     function button_onclick()&#123;</div><div class="line">      //蓝牙初始化</div><div class="line">      BlutoothDevicePlugin.initBluetoothPlugins();</div><div class="line">    &#125;</div><div class="line">   &lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>cordova_pludins.js<br>cordova_pludins.js是一个插件映射列表，每个插件映射维护一个ios接受js请求的file和前端页面js请求发方法的clobbers。 如下图：<br><img src="/2018/06/04/Cordova新建一个纯WebApp（二）-2018-06-04/cordova_plugins_js文件.png" alt="cordova_plugins_js文件"><br>通过上图这个映射可以找到上面的bluetoothDevicePlugin.js文件 以及前端调用bluetoothDevicePlugin.js的方法</p>
+<h2 id="前端页面调用"><a href="#前端页面调用" class="headerlink" title="前端页面调用"></a>前端页面调用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;/common_mobile/component/cordova/cordova.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">     function button_onclick()&#123;</div><div class="line">      //蓝牙初始化</div><div class="line">      BlutoothDevicePlugin.initBluetoothPlugins();</div><div class="line">    &#125;</div><div class="line">   &lt;/script&gt;</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>使用cordova_pludins.js中clobbers的方式，及bluetoothDevicePlugin.js中initBluetoothPlugins方法可以与ios进行交互。</p>
@@ -284,6 +283,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/04/06/机器学习环境搭建/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          机器学习环境搭建
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/05/30/Cordor&&WebApp-2018-5-30/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Cordova新建一个纯WebApp</div>
@@ -329,7 +337,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 童帅
+    		&copy; 2020 童帅
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -412,11 +420,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">-ios</a>
+                <a href="javascript:void(0)" class="js-tag color1">-机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">-IOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">-ios</a>
               </li>
             
             <div class="clearfix"></div>

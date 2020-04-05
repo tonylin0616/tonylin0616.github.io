@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://tonglinchina.com">
-  <title>Archives: 2018/1 | TonyLin&#39;blog</title>
+  <title>机器学习环境搭建 | TonyLin&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="毕业于扬州大学，现职于苏宁，主要做乐拼购ios的开发。喜欢学习不同的可能。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TonyLin&#39;blog">
-<meta property="og:url" content="http://tonglinchina.com/archives/2018/01/index.html">
+  <meta name="description" content="简介机器学习大家都知道学习吴恩达老师的课程，我最近也是一直在看，发现里面的使用的语言比较旧，python是目前大家用的最多的，所以就在网上找了环境的搭建方法。以前有段时间前端开发我用的Pycharm，刚开始使用选择了Pycharm工具，比较冗余，安装包特别大；也不是python专门使用的，安装依赖包不方便。anaconda是一个开源的Python发现版本，包含了conda和Python等多个科学包">
+<meta name="keywords" content="-机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习环境搭建">
+<meta property="og:url" content="http://tonglinchina.com/2020/04/06/机器学习环境搭建/index.html">
 <meta property="og:site_name" content="TonyLin&#39;blog">
-<meta property="og:description" content="毕业于扬州大学，现职于苏宁，主要做乐拼购ios的开发。喜欢学习不同的可能。">
+<meta property="og:description" content="简介机器学习大家都知道学习吴恩达老师的课程，我最近也是一直在看，发现里面的使用的语言比较旧，python是目前大家用的最多的，所以就在网上找了环境的搭建方法。以前有段时间前端开发我用的Pycharm，刚开始使用选择了Pycharm工具，比较冗余，安装包特别大；也不是python专门使用的，安装依赖包不方便。anaconda是一个开源的Python发现版本，包含了conda和Python等多个科学包">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-04-05T17:03:03.463Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TonyLin&#39;blog">
-<meta name="twitter:description" content="毕业于扬州大学，现职于苏宁，主要做乐拼购ios的开发。喜欢学习不同的可能。">
+<meta name="twitter:title" content="机器学习环境搭建">
+<meta name="twitter:description" content="简介机器学习大家都知道学习吴恩达老师的课程，我最近也是一直在看，发现里面的使用的语言比较旧，python是目前大家用的最多的，所以就在网上找了环境的搭建方法。以前有段时间前端开发我用的Pycharm，刚开始使用选择了Pycharm工具，比较冗余，安装包特别大；也不是python专门使用的，安装依赖包不方便。anaconda是一个开源的Python发现版本，包含了conda和Python等多个科学包">
   
     <link rel="alternative" href="/atom.xml" title="TonyLin&#39;blog" type="application/atom+xml">
   
@@ -145,60 +147,148 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-机器学习环境搭建" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/14/2017年度总结/" class="archive-article-date">
-  	<time datetime="2018-01-14T14:20:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-14</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/14/2017年度总结/">2017总结</a>
+    <h1 class="article-title" itemprop="name">
+      机器学习环境搭建
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/04/06/机器学习环境搭建/" class="archive-article-date">
+  	<time datetime="2020-04-05T16:31:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>机器学习大家都知道学习吴恩达老师的课程，我最近也是一直在看，发现里面的使用的语言比较旧，python是目前大家用的最多的，所以就在网上找了环境的搭建方法。<br>以前有段时间前端开发我用的Pycharm，刚开始使用选择了Pycharm工具，比较冗余，安装包特别大；也不是python专门使用的，安装依赖包不方便。<br>anaconda是一个开源的Python发现版本，包含了conda和Python等多个科学包及其依赖项；Anaconda可以管理包，就是能够安装、更新、移除工具包，比如Numpy、Scipy、pandas、Scikit-learn等数据分析中常用的包；也可以管理环境，能够创建、访问、共享、移除环境，用于隔离不同项目所需要的不同版本的工具包。<br><a id="more"></a></p>
+<h1 id="Anaconda安装"><a href="#Anaconda安装" class="headerlink" title="Anaconda安装"></a>Anaconda安装</h1><p>从官网下载Anaconda，官网地址：<a href="https://www.anaconda.com/download/" target="_blank" rel="external">https://www.anaconda.com/download/</a>，根据提示进行安装，完成后会发现有几项内容：<br>      Anaconda Navigator：管理工具包和环境的图形用户界面。可以查看环境个数及各个环境下安装的包和依赖，图形化界面很直观<br>      Anaconda Prompt：终端，可以使用命令行来管理包和环境。貌似需要点开下终端，不然conda命令提示不可用<br>      Jupyter Notebook ：基于web的交互式计算环境，可以编辑易于人们阅读的文档，用于展示数据分析的过程。支持markdown可用文档化便于记录和数据分析<br>     Spyder：一个使用Python语言、跨平台、科学运算的集成开发环境。还没使用</p>
+<h1 id="conda-常用命令"><a href="#conda-常用命令" class="headerlink" title="conda 常用命令"></a>conda 常用命令</h1><p>Anaconda Navigator界面中，针对每个环境中添加包，暂时还没找到那边可用添加，所以又去熟悉了下conda的命令。<br>conda info —envs  查看安装哪些环境<br>conda create —name tensorflow python=3.5 创建名字为tensorflow的环境<br>activate tensorflow 启动tensorflow环境<br>pip install tensorflow 安装tensorflow</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-杂谈</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-机器学习</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://tonglinchina.com/2020/04/06/机器学习环境搭建/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/06/04/Cordova新建一个纯WebApp（二）-2018-06-04/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Cordova新建一个纯WebApp(二)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -221,8 +311,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
