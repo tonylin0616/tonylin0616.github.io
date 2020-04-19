@@ -6,18 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://tonglinchina.com">
-  <title>Tag: -杂谈 | TonyLin&#39;blog</title>
+  <title>机器学习第一章 | TonyLin&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="毕业于扬州大学，现职于苏宁，主要做乐拼购ios的开发。喜欢学习不同的可能。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TonyLin&#39;blog">
-<meta property="og:url" content="http://tonglinchina.com/tags/杂谈/index.html">
+  <meta name="description" content="1-3 监督学习我们先看一个例子，然后给出正式的定义，现有从俄勒冈的波特兰市收集的数据，绘制数据集，横轴是不同房屋的平方英尺数，纵轴是不同房子的价格，单位是千美元，如下图：">
+<meta name="keywords" content="-机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习第一章">
+<meta property="og:url" content="http://tonglinchina.com/2020/04/19/introduction_ml/index.html">
 <meta property="og:site_name" content="TonyLin&#39;blog">
-<meta property="og:description" content="毕业于扬州大学，现职于苏宁，主要做乐拼购ios的开发。喜欢学习不同的可能。">
+<meta property="og:description" content="1-3 监督学习我们先看一个例子，然后给出正式的定义，现有从俄勒冈的波特兰市收集的数据，绘制数据集，横轴是不同房屋的平方英尺数，纵轴是不同房子的价格，单位是千美元，如下图：">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://tonglinchina.com/2020/04/19/introduction_ml/houseppre.png">
+<meta property="og:image" content="http://tonglinchina.com/2020/04/19/introduction_ml/breastcaner.png">
+<meta property="og:image" content="http://tonglinchina.com/2020/04/19/introduction_ml/breast_caner_feartures.png">
+<meta property="og:image" content="http://tonglinchina.com/2020/04/19/introduction_ml/unsupervised_learn.png">
+<meta property="og:image" content="http://tonglinchina.com/2020/04/19/introduction_ml/unsuper_learn_cookail_party.png">
+<meta property="og:updated_time" content="2020-04-19T09:44:42.021Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TonyLin&#39;blog">
-<meta name="twitter:description" content="毕业于扬州大学，现职于苏宁，主要做乐拼购ios的开发。喜欢学习不同的可能。">
+<meta name="twitter:title" content="机器学习第一章">
+<meta name="twitter:description" content="1-3 监督学习我们先看一个例子，然后给出正式的定义，现有从俄勒冈的波特兰市收集的数据，绘制数据集，横轴是不同房屋的平方英尺数，纵轴是不同房子的价格，单位是千美元，如下图：">
+<meta name="twitter:image" content="http://tonglinchina.com/2020/04/19/introduction_ml/houseppre.png">
   
     <link rel="alternative" href="/atom.xml" title="TonyLin&#39;blog" type="application/atom+xml">
   
@@ -145,108 +153,165 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-introduction_ml" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/14/2017年度总结/" class="archive-article-date">
-  	<time datetime="2018-01-14T14:20:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-14</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/14/2017年度总结/">2017总结</a>
+    <h1 class="article-title" itemprop="name">
+      机器学习第一章
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/04/19/introduction_ml/" class="archive-article-date">
+  	<time datetime="2020-04-19T09:34:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-3-监督学习"><a href="#1-3-监督学习" class="headerlink" title="1-3 监督学习"></a>1-3 监督学习</h2><p>我们先看一个例子，然后给出正式的定义，现有从俄勒冈的波特兰市收集的数据，绘制数据集，横轴是不同房屋的平方英尺数，纵轴是不同房子的价格，单位是千美元，如下图：<br><a id="more"></a><br><img src="/2020/04/19/introduction_ml/houseppre.png" alt="houseppre"></p>
+<p>假设一个朋友有个750平方英尺的房子，他想要卖掉这个房子，想知道卖多少钱，那么学习算法能帮你什么呢？我们可以用一条直线来拟合数据，价格大概在15万美金，但是上面数据用二次函数或二阶多项式来拟合会更好，价格大概在20万美金。后面我们会讨论如何选择和决定是用直线拟合数据还是用二次函数拟合数据。<br>以上就是一个监督学习的例子，<strong>监督学习是指我们给算法一个数据集，其中包含了正确答案，也就是我们给它一个房价的数据集，在每个数据集中的每个样本，我们都给出正确的价格</strong>。算法的目的是给出更多的正确答案，例如为你朋友想要卖掉的这所房子给出估价。<strong>使用更专业的术语，它也被称会线性回归，我们想要预测连续的数值输出</strong>.下面是另一个例子。横轴是肿瘤的尺寸，纵轴1或0表示是或否，如下图：</p>
+<p><img src="/2020/04/19/introduction_ml/breastcaner.png" alt="breastcaner"></p>
+<p>假设她的肿瘤的大小在上图红色箭头区域，机器学习的问题是你能否估计出肿瘤是良性的还是恶性的概率，<strong>用更专业的术语来说，这是一个分类问题，我们预测一个离散值输出</strong>.在实现场景中可能会有两个以上的可能的输出值；绘制数据上图中提供了另一种形式，O表示恶性肿瘤，X表示良性肿瘤。<br>在上面例子中我们只使用了一个特征，在其他机器学习中，我们会有多个特征。假设我们不仅知道肿瘤的大小，还知道病人的年纪，圈表示肿瘤是良性的，叉表示肿瘤恶性的，如下图：</p>
+<p><img src="/2020/04/19/introduction_ml/breast_caner_feartures.png" alt="breast_caner_feartures"></p>
+<p>在给定的数据集中学习，就是在数据上画出一条直线，设法将恶性肿瘤和良性肿瘤分开。假设有一个朋友不幸得了肿瘤如上图中点，根据直线划分可以判断肿瘤在良性区域。上面是两个特征，其实还会有其他一些特征如：肿瘤的厚度、肿瘤细胞大小的均匀性、肿瘤细胞形状的的均匀性等。在实际的机器学习中，不仅仅就3到5个特征，可能会无穷多的特征，如何在计算机中存储无穷多数量的特征，以向量机算法为例，就有一个灵活的数学技巧允许计算机处理无穷多的特征。</p>
+<h2 id="1-4-无监督学习"><a href="#1-4-无监督学习" class="headerlink" title="1-4 无监督学习"></a>1-4 无监督学习</h2><p>样本在监督学习中，每个样本都被标明为恶性肿瘤或者良性肿瘤；在无监督学习中，每个样本没有标明任何标签(恶性肿瘤或者良性肿瘤)，我们有一个数据集，如下图：</p>
+<p><img src="/2020/04/19/introduction_ml/unsupervised_learn.png" alt="unsupervised_learn"></p>
+<p>上图中数据我们不知道要拿来做什么，也不知道每个数据点究竟是什么，我们只被告知这里有一个数据集，你能在其中找到某种结构吗？给定数据集，无监督学习算法可能判定该数据集包含两个不同的簇，我们可以把这些数据分成两个不同的簇，这就是聚类算法。聚类算法应用在很大领域，如：</p>
+<ul>
+<li>谷歌新闻应用，谷歌搜索成千上万条新闻，然后自动地将他们分醋</li>
+<li>基因学应用，基本思想是给定一组不同的个体，每个个体检测他们是否拥有某个特定的基因，也就是检测特定基因的表达程度，这些颜色红绿灰等等，展示了不同个体拥有特定基因的程度，运行一个聚类算法把不同的个体归入不同的类</li>
+<li>大型计算机集群，试图找出哪些机器趋向于协同工作，如果你把这些机器放在一起，你可以让你的数据中心更高效地工作</li>
+<li>社交网络的分析，如果得知你经常联系的人或者得知你的好友有哪些，我们可以自动识别出你的圈子以及判断哪些人是你认识的</li>
+<li>市场细分中的应用，对于一个客户数据集，自动找出不同的市场分割并自动将你的客户分到不同的细分市场</li>
+<li>天文数据分析</li>
+</ul>
+<p>下面介绍一个实际的场景–鸡尾酒会问题，想象一下有一个很多人一起的宴会，大家都坐在一起说话，大家都同时在说话有许多声音混杂在一起，你几乎很难听清楚你面前人说的话。假设一个鸡尾酒会上只有两个人并且同时说话，在房间里面放置了两个麦克风，两个麦克风与两个人的距离不相同，两个麦克风记录了来自两人的声音的不同组合，如下图：</p>
+<p><img src="/2020/04/19/introduction_ml/unsuper_learn_cookail_party.png" alt="unsuper_learn_cookail_party"></p>
+<p>通过聚类算法可以把两个人的声音分成不同簇，再次放出来的时候可以清晰的听各自的声音，互相之间的混杂基本没有了。课程中有具体的声音演示以及octave的代码实现。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-杂谈</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-机器学习</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://tonglinchina.com/2020/04/19/introduction_ml/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/11/公司值班排班实现/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">公司值班表自动生成</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/29/diary-2017-1129/" class="archive-article-date">
-  	<time datetime="2017-11-29T14:39:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-29</time>
-</a>
-        </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/29/diary-2017-1129/">风萧</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-杂谈</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -269,9 +334,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
