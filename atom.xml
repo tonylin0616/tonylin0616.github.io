@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tonglinchina.com/"/>
-  <updated>2020-04-19T09:44:42.021Z</updated>
+  <updated>2020-04-25T09:35:59.224Z</updated>
   <id>http://tonglinchina.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习第二章</title>
+    <link href="http://tonglinchina.com/2020/04/25/ml_secondpart/"/>
+    <id>http://tonglinchina.com/2020/04/25/ml_secondpart/</id>
+    <published>2020-04-25T09:34:27.000Z</published>
+    <updated>2020-04-25T09:35:59.224Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="2-1-模型描述"><a href="#2-1-模型描述" class="headerlink" title="2-1 模型描述"></a>2-1 模型描述</h1><p>这节主要是介绍数据集中涉及的各种符号并且介绍模型的描述。以监督学习中房价预测为例，我们有一个训练集，并且定义各种符号含义，如下图：<br><a id="more"></a><br><img src="/2020/04/25/ml_secondpart/模型介绍1.png" alt="模型介绍1"></p><p>接下来看看监督学习算法是如何工作的，如下图：</p><p><img src="/2020/04/25/ml_secondpart/模型介绍2.png" alt="模型介绍2"></p><p>提供一个数据训练集，例如房子大小和房价数据集，通过学习算法输出一个假设函数h,假设函数用房子的大小作为输入，相应房价的预测作为输出，所以h是一个引导x到y的的函数。</p><h2 id="2-2-代价函数"><a href="#2-2-代价函数" class="headerlink" title="2-2 代价函数"></a>2-2 代价函数</h2><p><img src="/2020/04/25/ml_secondpart/代价函数2-2-1.png" alt="代价函数2-2-1"></p><p><img src="/2020/04/25/ml_secondpart/代价函数2-2-2.png" alt="代价函数2-2-2"></p><p><img src="/2020/04/25/ml_secondpart/代价函数2-2-3.png" alt="代价函数2-2-3"></p><h1 id="2-5-梯度下降算法"><a href="#2-5-梯度下降算法" class="headerlink" title="2-5 梯度下降算法"></a>2-5 梯度下降算法</h1><p><img src="/2020/04/25/ml_secondpart/梯度下降2-2-4.png" alt="梯度下降2-2-4"></p><p><img src="/2020/04/25/ml_secondpart/梯度下降2-2-5.png" alt="梯度下降2-2-5"></p><p><img src="/2020/04/25/ml_secondpart/梯度下降2-2-6.png" alt="梯度下降2-2-6"></p><p><img src="/2020/04/25/ml_secondpart/梯度下降2-2-7.png" alt="梯度下降2-2-7"></p><p><img src="/2020/04/25/ml_secondpart/梯度下降2-2-8.png" alt="梯度下降2-2-8"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;2-1-模型描述&quot;&gt;&lt;a href=&quot;#2-1-模型描述&quot; class=&quot;headerlink&quot; title=&quot;2-1 模型描述&quot;&gt;&lt;/a&gt;2-1 模型描述&lt;/h1&gt;&lt;p&gt;这节主要是介绍数据集中涉及的各种符号并且介绍模型的描述。以监督学习中房价预测为例，我们有一个训练集，并且定义各种符号含义，如下图：&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="-机器学习" scheme="http://tonglinchina.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习第一章</title>
